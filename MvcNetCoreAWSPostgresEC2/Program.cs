@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<HospitalContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("Postgres")));
+    options.UseMySQL(builder.Configuration.GetConnectionString("MariaDB")));
 builder.Services.AddTransient<RepositoryHospital>();
 
 var app = builder.Build();
